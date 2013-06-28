@@ -1,0 +1,243 @@
+*,
+*:before,
+*:after {
+  @include box-sizing(border-box);
+}
+
+html {
+  background: transparent;
+}
+
+body {
+  background-color: $body-bg-color;
+  color: #fff;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  -webkit-font-smoothing: antialiased;
+}
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  border: 2px solid $body-bg-color;
+  color: $body-bg-color;
+  font-size: 14px;
+  padding: 8px 0 9px 10px;
+  text-indent: 1px;
+  @include border-radius(6px);
+  @include box-shadow(none);
+  width: 100%;
+}
+
+nav ul, nav ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+  color:    $body-bg-color;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:    $body-bg-color;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:    $body-bg-color;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color:    $body-bg-color;
+}
+
+.login {
+  padding: 20px;
+  max-width: 480px;
+  margin: 75px auto;
+}
+
+.login__title {
+  color: $body-bg-color;
+}
+
+.login__logo {
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 240px;
+  background-color: darken(#27AE60, 5);
+  overflow-y: auto;
+}
+
+.main-nav__header {
+  color: $body-bg-color;
+  font-size: 1.9em;
+  padding: 20px;
+  margin: 0;
+  font-weight: 300;
+  background: darken(#27AE60, 20);
+}
+
+.main-nav__header__title {
+  margin: .5em 0 0 0;
+}
+
+.main-nav__list__item__link {
+  display: block;
+  border-bottom: 1px solid darken(#27AE60, 14);
+  padding: 1em;
+  color: #fff;
+  text-decoration: none;
+  &:hover {
+    background-color: darken(#27AE60, 14);
+  }
+}
+
+.btn {
+  position: relative;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  padding: 5px 8px;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  @include transition-property();
+  @include transition-duration(.3s);
+  @include transition-timing-function(ease-in);
+  -webkit-backface-visibility: hidden;
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    @include transition-property();
+    @include transition-duration(.3s);
+    @include transition-timing-function(ease-in);
+  }
+  &:before {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.btn2 {
+  background: darken(#27AE60, 14);
+  color: #fff;
+  box-shadow: 0 6px darken(#27AE60, 24);
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
+}
+
+/* Button 2a */
+.btn-2a {
+  border-radius: 0 0 5px 5px;
+}
+
+.btn-2a:hover {
+  box-shadow: 0 4px darken(#27AE60, 24);
+  top: 2px;
+}
+
+.btn-2a:active {
+  box-shadow: 0 0 darken(#27AE60, 24);
+  top: 6px;
+}
+
+/* Button 5 */
+.btn-5 {
+  background: darken(#27AE60, 24);
+  color: #fff;
+  height: 30px;
+  min-width: 60px;
+  line-height: 24px;
+  font-size: 16px;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.btn-5:active {
+  background: darken(#27AE60, 14);
+  top: 2px;
+}
+
+.btn-5 span {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.3s;
+  -webkit-backface-visibility: hidden;
+  -moz-transition: all 0.3s;
+  -moz-backface-visibility: hidden;
+  transition: all 0.3s;
+  backface-visibility: hidden;
+}
+
+.btn-5:before {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  line-height: 2.5;
+  font-size: 180%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn-5:active:before {
+  color: darken(#27AE60, 14);
+}
+
+/* Button 5a */
+.btn-5a:hover span {
+  -webkit-transform: translateY(300%);
+  -moz-transform: translateY(300%);
+  -ms-transform: translateY(300%);
+  transform: translateY(300%);
+}
+
+.btn-5a:before {
+  left: 0;
+  top: -100%;
+}
+
+.btn-5a:hover:before {
+  top: 0;
+}
+
+.icon-arrow-right:before {
+  content: "\e00d";
+}

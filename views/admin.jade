@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    nav.nav.main-nav
+        header.main-nav__header
+            img.login__logo(src="http://placehold.it/200x123", alt="Logo alt", width="200", height="123")
+            h3.main-nav__header__title Menu
+        ul.main-nav__list
+            li.main-nav__list__item
+                a(href="#/items/", class="main-nav__list__item__link") Items list
+            li.main-nav__list__item
+                a(href="#/items/add/", class="main-nav__list__item__link") Add Item
+            li.main-nav__list__item.main-nav__list__item_is_current
+                a(href="/logout/", class="main-nav__list__item__link") Logout
+
+    div(class='content', ng-view)
+
+    script(src='/js/lib/angular.js', defer)
+    script(src='http://code.angularjs.org/1.0.7/angular-resource.min.js', defer)
+    script(src='/js/admin.js', defer)
+    script(src='/js/controllers.js', defer)
+    script(src='/js/services.js', defer)

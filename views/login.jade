@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    div.login
+        img.login__logo(src="http://placehold.it/200x123", alt="Logo alt")
+        form( method="post")
+            h3.login__title Login
+            p
+                input(type="text", name="username", placeholder="username", required)
+            p
+                input(type="password", name="password", placeholder="password", required)
+            p
+                button.btn.btn2.btn-2a Login
+            p
+                button.btn.btn-5.btn-5a.icon-arrow-right
+                    span Login
+    div.content

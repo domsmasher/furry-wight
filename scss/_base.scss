@@ -1,0 +1,43 @@
+$base-font-family:  'Segoe UI Light', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+$base-font-size: 100% !default;
+$base-line-height: 150%;
+$em-base: 16px !default;
+
+
+@function emCalc($pxWidth) {
+  @return $pxWidth / $em-base * 1em;
+}
+
+$body-bg-color: #2ECC71;
+
+// Media Queries
+
+$small-screen: emCalc(768px);
+$medium-screen: emCalc(1280px);
+$large-screen: emCalc(1440px);
+
+$screen: "only screen";
+$small: "only screen and (min-width:"#{$small-screen}")";
+$medium: "only screen and (min-width:"#{$medium-screen}")";
+$large: "only screen and (min-width:"#{$large-screen}")";
+$landscape: "only screen and (orientation: landscape)";
+$portrait: "only screen and (orientation: portrait)";
+
+// Heading font sizes
+$h1-font-size: emCalc(44px);
+$h2-font-size: emCalc(37px);
+$h3-font-size: emCalc(27px);
+$h4-font-size: emCalc(23px);
+$h5-font-size: emCalc(18px);
+$h6-font-size: 1em;
+
+@font-face {
+  font-family: 'icomoon';
+  src:url('../fonts/icomoon.eot');
+  src:url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/icomoon.woff') format('woff'),
+  url('../fonts/icomoon.ttf') format('truetype'),
+  url('../fonts/icomoon.svg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,18 @@
+<h1>Add Item</h1>
+
+<form action="" method="post">
+    <p>
+        <input type="text" ng-model="item.title" name="title" placeholder="Title" />
+    </p>
+    <p>
+        <input type="text" ng-model="item.url" name="url" placeholder="URL" />
+    </p>
+    <p>
+        <input type="text" ng-model="item.description" name="description" placeholder="Description" />
+    </p>
+    <p>
+        <butto type="button"
+            data-ng-disabled="!item.title || !item.url || !item.description"
+            data-ng-click="insertItem()">Add Item</button>
+    </p>
+</form>

@@ -3,7 +3,10 @@ var connect = require('connect')
     , express = require('express')
     , socket = require('socket.io')
     , http = require('http')
-    , path = require('path');
+    , path = require('path')
+    , user = require('./routes/user')
+    , admin = require('./routes/admin')
+    , fs = require('fs');
 
 var app = module.exports = express();
 
@@ -51,12 +54,36 @@ io.sockets.on('connection', function(socket){
 ///////////////////////////////////////////
 
 /////// ADD ALL YOUR ROUTES HERE  /////////
-app.get('/', function (req, res) {
-    res.render('index', {
-        title : 'Your Page Title'
-        ,description: 'Your Page Description'
-        ,author: 'Your Name'
-        ,analyticssiteid: 'XXXXXXX'});
+//app.get('/', function (req, res) {
+//    res.render('index', {
+//        title : 'Your Page Title'
+//        ,description: 'Your Page Description'
+//        ,author: 'Your Name'
+//        ,analyticssiteid: 'XXXXXXX'});
+//});
+app.get('/login/', user.login);
+app.post('/login/', user.access);
+
+app.get('/admin/', admin.index);
+
+app.get('/public/partials/:fileName', function (req, res) {
+    if (req.param('fileName')) {
+        fs.readFile('./public/partials/' + req.param('fileName'), function (err, html) {
+            if (err) {
+                throw err;
+            }
+
+            res.writeHeader(200, {"Content-Type": "text/html"});
+            res.write(html);
+            res.end();
+        });
+    }
+});
+
+app.get('/items/', user.test);
+
+app.post('/items/add/', function (req, res) {
+    console.log(req);
 });
 
 
